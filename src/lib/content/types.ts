@@ -19,22 +19,22 @@ export interface ProjectSummary {
   id: string;
   slug: string;
   title: string;
-  author?: string;
-  description?: string;
-  iconUrl?: string;
-  downloads?: number;
+  author?: string | undefined;
+  description?: string | undefined;
+  iconUrl?: string | undefined;
+  downloads?: number | undefined;
   gameVersions: string[];
   loaders: string[];
   categories: string[];
   projectType: ContentCategory;
-  updatedAt?: string;
-  pageUrl?: string;
+  updatedAt?: string | undefined;
+  pageUrl?: string | undefined;
 }
 
 export interface ProviderPage {
   provider: Provider;
   items: ProjectSummary[];
-  total?: number;
+  total?: number | undefined;
   hasMore: boolean;
 }
 
@@ -42,17 +42,17 @@ export type ProviderError = { provider: Provider; kind: "not_configured" | "rate
 
 export interface ProjectFile {
   name: string;
-  versionNumber?: string;
+  versionNumber?: string | undefined;
   gameVersions: string[];
   loaders: string[];
-  date?: string;
-  fileName?: string;
-  size?: number;
+  date?: string | undefined;
+  fileName?: string | undefined;
+  size?: number | undefined;
 }
 
 export interface ProjectDetails extends ProjectSummary {
-  license?: string;
-  publishedAt?: string;
+  license?: string | undefined;
+  publishedAt?: string | undefined;
   files: ProjectFile[];
 }
 

@@ -21,7 +21,7 @@ export const PROVIDER_CATEGORIES: Record<Provider, ContentCategory[]> = {
 
 export interface MergedPage {
   items: ProjectSummary[];
-  totals: Partial<Record<Provider, number>>;
+  totals: Partial<Record<Provider, number | undefined>>;
   errors: ProviderError[];
   /** Providers that still have further pages. */
   more: Provider[];
