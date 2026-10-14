@@ -70,7 +70,7 @@ function Settings() {
             <VersionSelect id="set-version" value={prefs.defaultVersion} onChange={(v) => setPref("defaultVersion", v)} />
           </Row>
           <Row label="Memory allocation" hint={`${prefs.ramGb} GB · provisional`}>
-            <Slider aria-label="Memory allocation in gigabytes" min={RAM_MIN} max={RAM_MAX} step={1} value={[prefs.ramGb]} onValueChange={([v]) => setPref("ramGb", v)} className="py-2" />
+            <Slider aria-label="Memory allocation in gigabytes" min={RAM_MIN} max={RAM_MAX} step={1} value={[prefs.ramGb]} onValueChange={(v) => setPref("ramGb", v[0] ?? 4)} className="py-2" />
           </Row>
           <Row label="Preferred mod loader" htmlFor="set-loader">
             <ModLoaderSelect id="set-loader" value={prefs.modLoader} onChange={(v) => setPref("modLoader", v)} />
@@ -86,7 +86,7 @@ function Settings() {
             </div>
           </Row>
           <Row label="Parallel downloads" hint={`${prefs.concurrency} at a time · placeholder`}>
-            <Slider aria-label="Parallel downloads" min={1} max={8} step={1} value={[prefs.concurrency]} onValueChange={([v]) => setPref("concurrency", v)} className="py-2" />
+            <Slider aria-label="Parallel downloads" min={1} max={8} step={1} value={[prefs.concurrency]} onValueChange={(v) => setPref("concurrency", v[0] ?? 4)} className="py-2" />
           </Row>
         </div>
       </Panel>

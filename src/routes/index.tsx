@@ -94,7 +94,7 @@ function Home() {
             </div>
             <div>
               <FieldLabel hint={<span className="text-meta font-medium tabular-nums">{prefs.ramGb} GB allocated</span>}>Memory allocation</FieldLabel>
-              <Slider aria-label="Memory allocation in gigabytes" min={RAM_MIN} max={RAM_MAX} step={1} value={[prefs.ramGb]} onValueChange={([v]) => setPref("ramGb", v)} className="py-2" />
+              <Slider aria-label="Memory allocation in gigabytes" min={RAM_MIN} max={RAM_MAX} step={1} value={[prefs.ramGb]} onValueChange={(v) => setPref("ramGb", v[0] ?? 4)} className="py-2" />
               <div className="mt-1 flex justify-between text-tiny text-faint">
                 <span>{RAM_MIN} GB</span>
                 <span>Provisional — system memory isn't detected yet</span>
