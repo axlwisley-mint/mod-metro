@@ -1,5 +1,5 @@
 import { Link, Outlet, useRouterState } from "@tanstack/react-router";
-import { Boxes, Home, Settings, Shirt, User } from "lucide-react";
+import { Boxes, Home, Package, Settings, Shirt, User } from "lucide-react";
 import { Toaster } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -11,6 +11,7 @@ import { SignInDialog } from "./SignInDialog";
 const NAV = [
   { to: "/", label: "Home", icon: Home },
   { to: "/installations", label: "Installations", icon: Boxes },
+  { to: "/mods", label: "Mods", icon: Package },
   { to: "/skins", label: "Skins", icon: Shirt },
   { to: "/settings", label: "Settings", icon: Settings },
 ] as const;
