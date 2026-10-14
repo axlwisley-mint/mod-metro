@@ -7,7 +7,7 @@ export function ModLoaderSelect({ id, value, onChange }: { id?: string; value: M
   return (
     <Select value={value} onValueChange={(v) => onChange(v as ModLoader)}>
       <SelectTrigger id={id} className={selectTriggerClass}>
-        <SelectValue />
+        <SelectValue>{MOD_LOADERS.find((m) => m.id === value)?.label}</SelectValue>
       </SelectTrigger>
       <SelectContent className={selectContentClass}>
         {MOD_LOADERS.map((m) => (

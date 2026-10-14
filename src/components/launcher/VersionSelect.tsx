@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 
 export function VersionSelect({ id, value, onChange, className }: { id?: string; value: string | null; onChange: (v: string) => void; className?: string }) {
   return (
-    <Select value={value ?? undefined} onValueChange={onChange}>
+    <Select {...(value ? { value } : {})} onValueChange={onChange}>
       <SelectTrigger id={id} className={cn(selectTriggerClass, className)}>
-        <SelectValue placeholder="Select a version" />
+        <SelectValue placeholder="Select a version">{DEMO_VERSIONS.find((v) => v.id === value)?.label}</SelectValue>
       </SelectTrigger>
       <SelectContent className={selectContentClass}>
         {DEMO_VERSIONS.map((v) => (

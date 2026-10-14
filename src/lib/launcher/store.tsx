@@ -42,7 +42,7 @@ export function LauncherProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!hydrated) return;
     save("prefs", prefs);
-    document.documentElement.dataset.reduceMotion = String(prefs.reduceMotion);
+    document.documentElement.dataset["reduceMotion"] = String(prefs.reduceMotion);
   }, [prefs, hydrated]);
 
   useEffect(() => {
