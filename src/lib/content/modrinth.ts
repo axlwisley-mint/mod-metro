@@ -22,7 +22,7 @@ interface MrHit {
 async function get<T>(path: string, signal?: AbortSignal): Promise<T> {
   let res: Response;
   try {
-    res = await fetch(BASE + path, { signal, headers: { Accept: "application/json" } });
+    res = await fetch(BASE + path, { signal: signal ?? null, headers: { Accept: "application/json" } });
   } catch (e) {
     if ((e as Error).name === "AbortError") throw e;
     throw new ProviderRequestError("network", "Couldn't reach Modrinth.");
